@@ -14,7 +14,7 @@ const NavItem = ({...props}: Props) => {
   const url = usePathname();
 
   return (
-    <Link className={cn("text-[rgb(195,194,194)]", url===props.href && "border-b text-white")} {...props}>
+    <Link className={cn("text-[rgb(195,194,194)] md:text-base text-xl", url===props.href && "border-b text-white")} {...props}>
       {props.children}
     </Link>
   );
