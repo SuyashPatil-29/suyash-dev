@@ -25,7 +25,7 @@ export default function Home() {
             <Github />
           </Link>
           <Link href="https://twitter.com/_suyashpatil">
-            <Twitter />{" "}
+            <Twitter />
           </Link>
           <Link href="https://www.linkedin.com/in/suyash-patil-1921b0202/">
             <Linkedin />
