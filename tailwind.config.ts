@@ -1,3 +1,4 @@
+import { Component } from "lucide-react";
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -82,4 +83,3 @@ const config = {
 };
 
 module.exports = config;
-export {};
