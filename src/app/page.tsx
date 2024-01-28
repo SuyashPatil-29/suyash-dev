@@ -1,12 +1,34 @@
+import { TracingBeam } from "@/components/TracingBeam";
+import { TypewriterEffect } from "@/components/TypewriterEffect";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
+
+  const words = [
+    {
+      text: "Oh,",
+      className: "text-4xl text-white font-extrabold mb-4",
+    },
+    {
+      text: "hello",
+      className: "text-4xl text-white font-extrabold mb-4",
+    },
+    {
+      text: "there",
+      className: "text-4xl text-white font-extrabold mb-4",
+    },
+    {
+      text: ",",  // Unicode escape sequence for the waving hand emoji
+      className: "text-4xl text-white font-extrabold mb-4",
+    },
+  ];  
+
   return (
-    <div>
-      <div className="text-4xl text-white font-extrabold mb-4 ">
-        Oh, hello there 👋
-      </div>
+    <TracingBeam className="">
+
+      <TypewriterEffect words={words}/>
+
       <div className="text-[rgb(177,177,177)] dark:text-black leading-7">
         <p>
           👨‍🎓 I’m{" "}
@@ -38,6 +60,6 @@ export default function Home() {
           development and more. Scroll down and check ‘em out!
         </h2>
       </div>
-    </div>
+    </TracingBeam>
   );
 }

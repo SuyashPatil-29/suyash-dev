@@ -37,12 +37,12 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="relative px-2 max-w-3xl py-6 lg:py-10 prose-base">
       <Link
-        href="/blog"
+        href="/archive"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "absolute left-[-200px] top-14 hidden xl:inline-flex"
+          "absolute left-[-200px] top-14 hidden xl:inline-flex text-white hover:text-black rounded-xl"
         )}
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />
@@ -52,12 +52,12 @@ export default async function PostPage({ params }: PostPageProps) {
         {post.date && (
           <time
             dateTime={post.date}
-            className="block text-sm text-muted-foreground"
+            className="block text-sm text-gray-300"
           >
             Published on {formatDate(post.date)}
           </time>
         )}
-        <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
+        <h1 className="mt-2 inline-block font-semibold text-4xl leading-tight lg:text-5xl lg:font-extrabold text-white">
           {post.title}
         </h1>
       </div>
@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <Mdx code={post.body.code} />
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
+        <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }),"text-white hover:text-black rounded-xl")}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>

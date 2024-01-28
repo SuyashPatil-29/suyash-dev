@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[rgb(23,23,23)]`}>
+      <body className={`${inter.className} bg-[rgb(29,30,32)]`}>
         <Navbar />
         <MaxWidthWrapper>
         {children}
