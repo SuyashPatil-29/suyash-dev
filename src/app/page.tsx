@@ -64,7 +64,7 @@ export default function Home() {
 
         <TextGenerateEffect words={textToGenerate} />
 
-        <h1 className="mt-10 text-4xl text-white font-bold mb-6">Blogs</h1>
+        <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
         <div className="grid grid-cols-1 gap-3">
           <ProjectCard

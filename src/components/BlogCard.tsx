@@ -2,7 +2,7 @@
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
-export default function ProjectCard({ title, description, href }) {
+export default function ProjectCard({ title, description, href }:{title : string, description : string, href:string}) {
   // const tags = ["GitHub", "React", "JamStack"];
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -23,9 +23,9 @@ export default function ProjectCard({ title, description, href }) {
     >
       <HoverPattern mouseX={mouseX} mouseY={mouseY} />
 
-      <div className="relative h-full p-6">
-        <h1 className="text-xl font-semibold p-2 pl-0">{title}</h1>
-        <p>{description}</p>
+      <div className="relative h-full md:p-6 p-4">
+        <h1 className="text-xl font-semibold md:p-2 md:pl-0">{title}</h1>
+        <p>{description.substring(0,150)}...</p>
       </div>
     </a>
   );
