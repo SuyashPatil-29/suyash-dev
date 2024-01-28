@@ -1,3 +1,4 @@
+import { TextGenerateEffect } from "@/components/TextGenerateEffect";
 import { TracingBeam } from "@/components/TracingBeam";
 import { TypewriterEffect } from "@/components/TypewriterEffect";
 import { Github, Linkedin, Twitter } from "lucide-react";
@@ -18,11 +19,9 @@ export default function Home() {
       text: "there",
       className: "text-4xl text-white font-extrabold mb-4",
     },
-    {
-      text: ",",  // Unicode escape sequence for the waving hand emoji
-      className: "text-4xl text-white font-extrabold mb-4",
-    },
   ];  
+
+  const textToGenerate = "This blog will serve as a home for all my thoughts, notes and experiences, ranging from programming to math, machine learning, web development and more. Scroll down and check ‘em out!"
 
   return (
     <TracingBeam className="">
@@ -43,22 +42,19 @@ export default function Home() {
         <p>🏡 Currently living in the beautiful city of Bengaluru in India.</p>
 
         <div className="flex mt-6 gap-4">
-          <Link href="https://github.com/SuyashPatil-29">
+          <Link className="hover:text-white" href="https://github.com/SuyashPatil-29">
             <Github />
           </Link>
-          <Link href="https://twitter.com/_suyashpatil">
+          <Link className="hover:text-white" href="https://twitter.com/_suyashpatil">
             <Twitter />
           </Link>
-          <Link href="https://www.linkedin.com/in/suyash-patil-1921b0202/">
+          <Link className="hover:text-white" href="https://www.linkedin.com/in/suyash-patil-1921b0202/">
             <Linkedin />
           </Link>
         </div>
 
-        <h2 className=" text-xl mt-6 leading-7">
-          This blog will serve as a home for all my thoughts, notes and
-          experiences, ranging from programming to math, machine learning, web
-          development and more. Scroll down and check ‘em out!
-        </h2>
+        <TextGenerateEffect words={textToGenerate} />
+
       </div>
     </TracingBeam>
   );
