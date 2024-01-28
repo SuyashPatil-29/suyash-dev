@@ -37,7 +37,7 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="relative px-2 max-w-3xl py-6 lg:py-10 prose-base">
+    <article className="relative max-w-3xl py-6 lg:py-10 prose-base">
       <Link
         href="/archive"
         className={cn(
