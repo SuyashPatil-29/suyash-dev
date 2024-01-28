@@ -74,3 +74,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.border-gradient {
+  border-image: linear-gradient(to right, #3182CE, #DB2777);
+  border-image-slice: 3;
+  border-radius: 10px;
+  border-width: 3.2px;
+}
