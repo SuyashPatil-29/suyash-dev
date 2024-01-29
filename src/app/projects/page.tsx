@@ -53,9 +53,9 @@ const page = () => {
 
   return (
     <>
-      <h3 className="font-bold text-xl md:text-4xl tracking-tight mb-6 text-white">
+      {/* <h3 className="font-bold text-xl md:text-4xl tracking-tight mb-6 text-white">
         Projects
-      </h3>
+      </h3> */}
 
       <div className="grid h-full w-full place-items-center mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
