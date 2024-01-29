@@ -14,42 +14,50 @@ const page = () => {
   }
   const projects: Project[] = [
     {
-      title: "Moonbeam",
+      title: "Pdfile",
       description:
-        "Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant.",
-      href: "XXXXXXXXXXXXXXXXXXXXXX",
+        "Chat with your Document in seconds. Pdfile allwos you to have conversations with any document. Simply upload your file and start asking questions right away.",
+      href: "https://pdfileai.vercel.app/",
       tags: [
         "Front-end",
-        "GPT-3",
+        "GPT-3.5",
         "Next.js",
-        "React",
         "TailwindCSS",
-        "Chrome Extension",
+        "Prisma",
+        "Pinecone",
+        "Supabase",
       ],
     },
     {
-      title: "Aceternity",
+      title: "SpenseShop",
       description:
-        "Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love.",
-      href: "XXXXXXXXXXXXXXXXXXXXXX",
-      tags: ["Next.js", "React", "TailwindCSS", "Full-Stack"],
+        "Beautiful e-commerce app integrated with Sanity CMS and Firebase for Authentication and Data Storage.",
+      href: "https://spenseshop.vercel.app/",
+      tags: ["Next.js", "Sanity CMS", "TailwindCSS", "Firebase"],
     },
     {
-      title: "Algochurn",
+      title: "Breadit",
       description:
-        "Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment.",
-      href: "XXXXXXXXXXXXXXXXXXXXXX",
-      tags: ["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"],
+        "A minimal yet beautiful reddit clone where you can create groups, join groups and post messages using the integrated rich text editor.",
+      href: "https://breadit-suyash.vercel.app/",
+      tags: ["Next.js", "Supabase", "TailwindCSS", "Redis", "Editor"],
+    },
+    {
+      title: "Visualize",
+      description:
+        "A next gen text to video app. Simply enter your prompt and get stunning high quality videos generated in seconds",
+      href: "https://visualize-ten.vercel.app/",
+      tags: ["Next.js", "TailwindCSS", "Replicate", "AI", "Supabase", "Prisma"],
     },
   ];
 
   return (
     <>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-white">
+      <h3 className="font-bold text-xl md:text-4xl tracking-tight mb-6 text-white">
         Projects
       </h3>
 
-      <div className="grid h-full w-full place-items-center">
+      <div className="grid h-full w-full place-items-center mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projects.map((project: Project, id: number) => {
             return (

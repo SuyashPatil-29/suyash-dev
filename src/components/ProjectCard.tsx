@@ -13,7 +13,7 @@ export default function ProjectCard({ title, description, href, tags }) {
   }
   return (
     <a
-      className="group mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-200 dark:border-slate-700 w-full"
+      className="group mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-700 w-full  min-h-[250px]"
       href={href}
       aria-label={title}
       target="_blank"
@@ -23,8 +23,8 @@ export default function ProjectCard({ title, description, href, tags }) {
       <HoverPattern mouseX={mouseX} mouseY={mouseY} />
 
       <div className="relative h-full">
-        <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-400/0 via-blue-400/40 to-blue-400/0"></span>
-        <span className="absolute w-px -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-400/0 via-blue-400/40 to-blue-400/0"></span>
+        <span className="absolute w-[40%] -bottom-px right-px h-[1px] bg-gradient-to-r from-blue-400/0 via-blue-400/40 to-blue-400/0"></span>
+        <span className="absolute w-[1px] -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-400/0 via-blue-400/40 to-blue-400/0"></span>
 
         <div className="  flex flex-col items-start border-gray-800 rounded p-4 relative">
           {/* */}
@@ -41,7 +41,7 @@ export default function ProjectCard({ title, description, href, tags }) {
                 {tags?.map((tag:string, idx:number) => (
                   <p
                     key={idx}
-                    className={`leading-5 mb-2 border border-zinc-700 text-gray-300 bg-transparent rounded-md text-xs italic mr-2 px-1`}
+                    className={`leading-5 mb-2 border border-gray-500 text-gray-300 bg-transparent rounded-md text-xs italic mr-2 py-[2px] px-1`}
                   >
                     {tag}
                   </p>

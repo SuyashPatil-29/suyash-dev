@@ -1,39 +1,50 @@
-import { allAuthors, allBlogs } from "contentlayer/generated"
-import { notFound } from "next/navigation"
-
-import { Mdx } from "@/components/MdxComponents"
-
-import "@/app/mdx.css"
-import Image from "next/image"
-import Link from "next/link"
-
-import { Icons } from "@/components/Icons"
-import { buttonVariants } from "@/components/ui/button"
-import { cn, formatDate } from "@/lib/utils"
-
+import "@/app/mdx.css";
+import { Icons } from "@/components/Icons";
+import { Mdx } from "@/components/MdxComponents";
+import { buttonVariants } from "@/components/ui/button";
+import { cn, formatDate } from "@/lib/utils";
+import { allBlogs } from "contentlayer/generated";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface PostPageProps {
   params: {
-    slug: string[]
-  }
+    slug: string[];
+  };
 }
 
-async function getPostFromParams(params) {
-  const slug = params?.slug
-  const post = allBlogs.find((post) => post.slugAsParams === slug)
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const post = await getPostFromParams(params);
 
   if (!post) {
-    null
+    return {};
+  }
+  return {
+    title: post.title,
+    description: post.description,
+  };
+}
+
+async function getPostFromParams(params: { slug: any }) {
+  const slug = params?.slug;
+  const post = allBlogs.find((post) => post.slugAsParams === slug);
+
+  if (!post) {
+    null;
   }
 
-  return post
+  return post;
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params)
+  const post = await getPostFromParams(params);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -50,10 +61,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </Link>
       <div>
         {post.date && (
-          <time
-            dateTime={post.date}
-            className="block text-sm text-gray-300"
-          >
+          <time dateTime={post.date} className="block text-sm text-gray-300">
             Published on {formatDate(post.date)}
           </time>
         )}
@@ -74,11 +82,14 @@ export default async function PostPage({ params }: PostPageProps) {
       <Mdx code={post.body.code} />
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/archive" className={cn(buttonVariants({ variant: "link" }),"text-white")}>
+        <Link
+          href="/archive"
+          className={cn(buttonVariants({ variant: "link" }), "text-white")}
+        >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>
       </div>
     </article>
-  )
+  );
 }
