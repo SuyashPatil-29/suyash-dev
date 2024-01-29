@@ -37,12 +37,12 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="relative max-w-3xl py-6 lg:py-10 prose-base">
+    <article className="relative max-w-3xl py-6 lg:py-10 md:prose-lg prose-base">
       <Link
         href="/archive"
         className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-[-200px] top-14 hidden xl:inline-flex text-white hover:text-black rounded-xl"
+          buttonVariants({ variant: "link" }),
+          "absolute left-[-200px] top-14 hidden xl:inline-flex text-white"
         )}
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />
@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <Mdx code={post.body.code} />
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }),"text-white hover:text-black rounded-xl")}>
+        <Link href="/archive" className={cn(buttonVariants({ variant: "link" }),"text-white")}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts
         </Link>

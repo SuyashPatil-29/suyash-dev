@@ -1,7 +1,8 @@
-import ProjectCard from "@/components/BlogCard";
+import BlogCard from "@/components/BlogCard";
 import { TextGenerateEffect } from "@/components/TextGenerateEffect";
 import { TracingBeam } from "@/components/TracingBeam";
 import { TypewriterEffect } from "@/components/TypewriterEffect";
+import { allBlogs } from "contentlayer/generated";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
@@ -25,7 +26,7 @@ export default function Home() {
     "This blog will serve as a home for all my thoughts, notes and experiences, ranging from programming to math, machine learning, web development and more. Scroll down and check ‘em out!";
 
   return (
-    <TracingBeam className="">
+    <TracingBeam className="text-sky-200">
       <TypewriterEffect words={words} />
 
       <div className="text-[rgb(177,177,177)] dark:text-black leading-7">
@@ -67,32 +68,46 @@ export default function Home() {
         <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
         <div className="grid grid-cols-1 gap-3">
-          <ProjectCard
-            title="Moonbeam"
-            description="Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant."
-            href="https://gomoonbeam.com"
-          />
-          <ProjectCard
-            title="Aceternity"
-            description="Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love."
-            href="https://aceternity.com"
-          />
-          <ProjectCard
-            title="Algochurn"
-            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
-            href="https://algochurn.com"
-          />
-
-          <ProjectCard
-            title="Tailwind Master Kit"
-            description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
-            href="https://tailwindmasterkit.com/"
-          />
-          <ProjectCard
-            title="PlaceholderTech"
-            description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
-            href="https://placeholdertech.in/"
-          />
+          {allBlogs.map((blog) => {
+            return (
+              <BlogCard
+                title={blog.title}
+                key={blog._id}
+                description={blog.description!}
+                href={`/archive/${blog.slugAsParams}`}
+              />
+            );
+          })}
+          {allBlogs.map((blog) => {
+            return (
+              <BlogCard
+                title={blog.title}
+                key={blog._id}
+                description={blog.description!}
+                href={`/archive/${blog.slugAsParams}`}
+              />
+            );
+          })}
+          {allBlogs.map((blog) => {
+            return (
+              <BlogCard
+                title={blog.title}
+                key={blog._id}
+                description={blog.description!}
+                href={`/archive/${blog.slugAsParams}`}
+              />
+            );
+          })}
+          {allBlogs.map((blog) => {
+            return (
+              <BlogCard
+                title={blog.title}
+                key={blog._id}
+                description={blog.description!}
+                href={`/archive/${blog.slugAsParams}`}
+              />
+            );
+          })}
         </div>
       </div>
     </TracingBeam>

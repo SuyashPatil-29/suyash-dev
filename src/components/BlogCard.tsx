@@ -2,7 +2,7 @@
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
-export default function ProjectCard({ title, description, href }:{title : string, description : string, href:string}) {
+export default function BlogCard({ title, description, href }:{title : string, description : string, href:string}) {
   // const tags = ["GitHub", "React", "JamStack"];
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
@@ -17,7 +17,6 @@ export default function ProjectCard({ title, description, href }:{title : string
       className="group mb-4 rounded-2xl transition duration-200 relative bg-[rgb(41,41,47)] text-white w-full"
       href={href}
       aria-label={title}
-      target="_blank"
       rel="noopener noreferrer"
       onMouseMove={onMouseMove}
     >

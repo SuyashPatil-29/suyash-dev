@@ -63,11 +63,13 @@
     "react-editor-js": "^2.1.0",
     "react-hook-form": "^7.43.9",
     "react-textarea-autosize": "^8.4.1",
+    "react-use": "^17.5.0",
     "sharp": "^0.33.2",
     "shiki": "^0.11.1",
     "stripe": "^11.18.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
+    "use-window-size": "^0.0.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
