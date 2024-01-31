@@ -2,21 +2,21 @@
 "use client"
 import React, { useState } from "react";
 import {
- Sheet,
- SheetContent,
- SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import NavItem from "./NavItem";
 
 const MobileNavbar = () => {
- const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
- const toggleSheet = () => {
+  const toggleSheet = () => {
     setIsOpen(!isOpen);
- };
+  };
 
- return (
+  return (
     <div className="md:hidden block text-white">
       <Sheet open={isOpen}>
         <SheetTrigger onClick={toggleSheet}>
@@ -27,6 +27,7 @@ const MobileNavbar = () => {
           className="flex flex-col items-center justify-center gap-4"
         >
           <X className="absolute top-5 right-5 w-8 h-8 cursor-pointer text-white" onClick={toggleSheet} />
+          <NavItem href="/" onClick={toggleSheet}>Home</NavItem>
           <NavItem href="/archive" onClick={toggleSheet}>Archive</NavItem>
           <NavItem href="/projects" onClick={toggleSheet}>Projects</NavItem>
           <NavItem href="/categories" onClick={toggleSheet}>Categories</NavItem>
@@ -34,7 +35,7 @@ const MobileNavbar = () => {
         </SheetContent>
       </Sheet>
     </div>
- );
+  );
 };
 
 export default MobileNavbar;

@@ -14,7 +14,7 @@ export default function BlogCard({ title, description, href }:{title : string, d
   }
   return (
     <a
-      className="group mb-4 rounded-2xl transition duration-200 relative bg-[rgb(41,41,47)] text-white w-full"
+      className="group md:mb-2 rounded-2xl transition duration-200 relative bg-[rgb(41,41,47)] text-white w-full"
       href={href}
       aria-label={title}
       rel="noopener noreferrer"
