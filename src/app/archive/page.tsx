@@ -124,8 +124,8 @@ const ArchivePage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-[80vh]">
-      <div className="flex-grow">
+    <div className="flex flex-col h-full">
+      <div className="flex-grow md:min-h-[65vh] min-h-[80vh]">
         <Input
           type="text"
           className="py-6 bg-[rgb(41,41,47)] rounded-xl text-white font-semibold"
