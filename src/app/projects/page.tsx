@@ -52,25 +52,19 @@ const page = () => {
   ];
 
   return (
-    <>
-      {/* <h3 className="font-bold text-xl md:text-4xl tracking-tight mb-6 text-white">
-        Projects
-      </h3> */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {projects.map((project: Project, id: number) => {
-            return (
-              <ProjectCard
-                key={id}
-                title={project.title}
-                description={project.description}
-                href={project.href}
-                tags={project.tags}
-              />
-            );
-          })}
-        </div>
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:mb-2 mb-8">
+      {projects.map((project: Project, id: number) => {
+        return (
+          <ProjectCard
+            key={id}
+            title={project.title}
+            description={project.description}
+            href={project.href}
+            tags={project.tags}
+          />
+        );
+      })}
+    </div>
   );
 };
 

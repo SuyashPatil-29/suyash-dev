@@ -13,7 +13,7 @@ export default function Home() {
       className: "text-4xl text-white font-extrabold mb-4",
     },
     {
-      text: "hello",
+      text: "hello ",
       className: "text-4xl text-white font-extrabold mb-4",
     },
     {
@@ -67,7 +67,7 @@ export default function Home() {
 
         <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 md:gap-3 gap-2">
           {allBlogs
             .slice()
             .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
