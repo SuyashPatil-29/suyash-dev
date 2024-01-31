@@ -18,7 +18,7 @@ import { EmptyAlert } from "@/components/EmptyAlert";
 
 const BlogsPerPage = 3;
 
-const page = () => {
+const ArchivePage = () => {
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[] | undefined>(
     allBlogs
   );
@@ -41,7 +41,7 @@ const page = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const renderPaginationItems = () => {
-    const totalPages = Math.ceil(filteredBlogs?.length / BlogsPerPage);
+    const totalPages = Math.ceil((filteredBlogs?.length as number) / BlogsPerPage);
     const displayedPages = 3;
 
     if (totalPages <= displayedPages) {
@@ -163,7 +163,7 @@ const page = () => {
                   setCurrentPage((prevPage) =>
                     Math.min(
                       prevPage + 1,
-                      Math.ceil(filteredBlogs?.length / BlogsPerPage)
+                      Math.ceil((filteredBlogs?.length as number) / BlogsPerPage)
                     )
                   )
                 }
@@ -176,4 +176,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ArchivePage;
