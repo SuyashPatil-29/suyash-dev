@@ -6,7 +6,7 @@ import {
  SheetContent,
  SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import NavItem from "./NavItem";
 
 const MobileNavbar = () => {
@@ -26,7 +26,7 @@ const MobileNavbar = () => {
           side="left"
           className="flex flex-col items-center justify-center gap-4"
         >
-          <NavItem href="/" onClick={toggleSheet}>Home</NavItem>
+          <X className="absolute top-5 right-5 w-8 h-8 cursor-pointer text-white" onClick={toggleSheet} />
           <NavItem href="/archive" onClick={toggleSheet}>Archive</NavItem>
           <NavItem href="/projects" onClick={toggleSheet}>Projects</NavItem>
           <NavItem href="/categories" onClick={toggleSheet}>Categories</NavItem>
