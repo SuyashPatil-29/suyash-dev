@@ -2,15 +2,8 @@
 
 import blogs__middlewareMdx from './blogs__middleware.mdx.json' assert { type: 'json' }
 import blogs__deployingNextAppsMdx from './blogs__deploying-next-apps.mdx.json' assert { type: 'json' }
-import blogs__middlewareCopyMdx from './blogs__middleware - Copy.mdx.json' assert { type: 'json' }
+import blogs__deployingNextAppsCopy_5Mdx from './blogs__deploying-next-apps - Copy (5).mdx.json' assert { type: 'json' }
 import blogs__deployingNextAppsCopyMdx from './blogs__deploying-next-apps - Copy.mdx.json' assert { type: 'json' }
 import blogs__deployingNextAppsCopy_2Mdx from './blogs__deploying-next-apps - Copy (2).mdx.json' assert { type: 'json' }
-import blogs__middlewareCopy_2Mdx from './blogs__middleware - Copy (2).mdx.json' assert { type: 'json' }
-import blogs__deployingNextAppsCopy_3Mdx from './blogs__deploying-next-apps - Copy (3).mdx.json' assert { type: 'json' }
-import blogs__middlewareCopy_3Mdx from './blogs__middleware - Copy (3).mdx.json' assert { type: 'json' }
-import blogs__middlewareCopy_4Mdx from './blogs__middleware - Copy (4).mdx.json' assert { type: 'json' }
-import blogs__deployingNextAppsCopy_4Mdx from './blogs__deploying-next-apps - Copy (4).mdx.json' assert { type: 'json' }
-import blogs__deployingNextAppsCopy_5Mdx from './blogs__deploying-next-apps - Copy (5).mdx.json' assert { type: 'json' }
-import blogs__middlewareCopy_5Mdx from './blogs__middleware - Copy (5).mdx.json' assert { type: 'json' }
 
-export const allBlogs = [blogs__middlewareMdx, blogs__deployingNextAppsMdx, blogs__middlewareCopyMdx, blogs__deployingNextAppsCopyMdx, blogs__deployingNextAppsCopy_2Mdx, blogs__middlewareCopy_2Mdx, blogs__deployingNextAppsCopy_3Mdx, blogs__middlewareCopy_3Mdx, blogs__middlewareCopy_4Mdx, blogs__deployingNextAppsCopy_4Mdx, blogs__deployingNextAppsCopy_5Mdx, blogs__middlewareCopy_5Mdx]
+export const allBlogs = [blogs__middlewareMdx, blogs__deployingNextAppsMdx, blogs__deployingNextAppsCopy_5Mdx, blogs__deployingNextAppsCopyMdx, blogs__deployingNextAppsCopy_2Mdx]

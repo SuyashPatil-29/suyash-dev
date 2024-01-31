@@ -18,7 +18,7 @@ const NavItem = ({ ...props }: Props) => {
   return (
     <Link
       className={cn(
-        "text-[rgb(195,194,194)] md:text-base text-xl",
+        "text-[rgb(195,194,194)] md:text-base text-xl hover:text-white",
         url.includes(props.linkto!) && "border-b text-white"
       )}
       {...props}

@@ -2,7 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import { TextGenerateEffect } from "@/components/TextGenerateEffect";
 import { TracingBeam } from "@/components/TracingBeam";
 import { TypewriterEffect } from "@/components/TypewriterEffect";
-import { allBlogs } from "contentlayer/generated";
+import { allBlogs, Blog } from "contentlayer/generated";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
@@ -68,16 +68,17 @@ export default function Home() {
         <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
         <div className="grid grid-cols-1 gap-3">
-          {allBlogs.slice().reverse().map((blog) => {
-            return (
+          {allBlogs
+            .slice()
+            .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+            .map((blog: Blog) => (
               <BlogCard
                 title={blog.title}
                 key={blog._id}
                 description={blog.description!}
                 href={`/archive/${blog.slugAsParams}`}
               />
-            );
-          })}
+            ))}
         </div>
       </div>
     </TracingBeam>

@@ -4,7 +4,7 @@
 import BlogNoEffectCard from "@/components/BlogNoEffectCard";
 import { Input } from "@/components/ui/input";
 import { allBlogs, Blog } from "contentlayer/generated";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   Pagination,
   PaginationContent,
@@ -20,7 +20,7 @@ const BlogsPerPage = 3;
 
 const ArchivePage = () => {
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[] | undefined>(
-    allBlogs
+    allBlogs?.slice().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
   );
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -30,7 +30,7 @@ const ArchivePage = () => {
     setFilteredBlogs(
       allBlogs?.filter((blog: Blog) =>
         blog.title.toLowerCase().includes(value)
-      )
+      )?.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     );
   };
 
@@ -38,11 +38,18 @@ const ArchivePage = () => {
   const indexOfFirstBlog = indexOfLastBlog - BlogsPerPage;
   const currentBlogs = filteredBlogs?.slice(indexOfFirstBlog, indexOfLastBlog);
 
+  const totalPages = useMemo(() => Math.ceil((filteredBlogs?.length as number) / BlogsPerPage), [
+    filteredBlogs,
+  ]);
+
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const renderPaginationItems = () => {
-    const totalPages = Math.ceil((filteredBlogs?.length as number) / BlogsPerPage);
     const displayedPages = 3;
+
+    if (totalPages <= 1) {
+      return null; // Do not render pagination if there's only one page
+    }
 
     if (totalPages <= displayedPages) {
       // Display all pages if there are 4 or fewer pages
@@ -127,8 +134,7 @@ const ArchivePage = () => {
         />
 
         {filteredBlogs && filteredBlogs.length > 0 ? (
-
-          <div className="grid grid-cols-1 gap-4 pt-4">
+          <div className="grid grid-cols-1 gap-4 md:pt-4 pt-8">
             {currentBlogs?.map((blog: Blog) => (
               <BlogNoEffectCard
                 key={blog._id}
@@ -139,39 +145,41 @@ const ArchivePage = () => {
               />
             ))}
           </div>
-
-        ) : (<EmptyAlert />)
-        }
+        ) : (
+          <EmptyAlert />
+        )}
       </div>
 
-      <div className="mb-8 self-center">
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                onClick={() =>
-                  setCurrentPage((prevPage) =>
-                    Math.max(prevPage - 1, 1)
-                  )
-                }
-              />
-            </PaginationItem>
-            {renderPaginationItems()}
-            <PaginationItem>
-              <PaginationNext
-                onClick={() =>
-                  setCurrentPage((prevPage) =>
-                    Math.min(
-                      prevPage + 1,
-                      Math.ceil((filteredBlogs?.length as number) / BlogsPerPage)
+      {totalPages > 1 && (
+        <div className="mt-8 mb-4 md:mb-8 self-center">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  onClick={() =>
+                    setCurrentPage((prevPage) =>
+                      Math.max(prevPage - 1, 1)
                     )
-                  )
-                }
-              />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
+                  }
+                />
+              </PaginationItem>
+              {renderPaginationItems()}
+              <PaginationItem>
+                <PaginationNext
+                  onClick={() =>
+                    setCurrentPage((prevPage) =>
+                      Math.min(
+                        prevPage + 1,
+                        Math.ceil((filteredBlogs?.length as number) / BlogsPerPage)
+                      )
+                    )
+                  }
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
+      )}
     </div>
   );
 };
