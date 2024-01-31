@@ -68,37 +68,7 @@ export default function Home() {
         <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
         <div className="grid grid-cols-1 gap-3">
-          {allBlogs.map((blog) => {
-            return (
-              <BlogCard
-                title={blog.title}
-                key={blog._id}
-                description={blog.description!}
-                href={`/archive/${blog.slugAsParams}`}
-              />
-            );
-          })}
-          {allBlogs.map((blog) => {
-            return (
-              <BlogCard
-                title={blog.title}
-                key={blog._id}
-                description={blog.description!}
-                href={`/archive/${blog.slugAsParams}`}
-              />
-            );
-          })}
-          {allBlogs.map((blog) => {
-            return (
-              <BlogCard
-                title={blog.title}
-                key={blog._id}
-                description={blog.description!}
-                href={`/archive/${blog.slugAsParams}`}
-              />
-            );
-          })}
-          {allBlogs.map((blog) => {
+          {allBlogs.slice().reverse().map((blog) => {
             return (
               <BlogCard
                 title={blog.title}

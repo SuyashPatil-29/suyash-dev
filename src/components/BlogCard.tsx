@@ -23,8 +23,8 @@ export default function BlogCard({ title, description, href }:{title : string, d
       <HoverPattern mouseX={mouseX} mouseY={mouseY} />
 
       <div className="relative h-full md:p-6 p-4">
-        <h1 className="text-xl font-semibold md:p-2 md:pl-0">{title}</h1>
-        <p>{description.substring(0,150)}...</p>
+        <h1 className="text-2xl font-semibold md:p-2 md:pl-0">{title}</h1>
+        <p className="text-gray-400">{description.substring(0,150)}...</p>
       </div>
     </a>
   );

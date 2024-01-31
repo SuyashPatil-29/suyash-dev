@@ -57,7 +57,6 @@ const page = () => {
         Projects
       </h3> */}
 
-      <div className="grid h-full w-full place-items-center mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projects.map((project: Project, id: number) => {
             return (
@@ -71,7 +70,6 @@ const page = () => {
             );
           })}
         </div>
-      </div>
     </>
   );
 };
