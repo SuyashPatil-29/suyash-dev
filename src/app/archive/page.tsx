@@ -1,5 +1,3 @@
-
-
 "use client";
 import BlogNoEffectCard from "@/components/BlogNoEffectCard";
 import { Input } from "@/components/ui/input";
@@ -20,7 +18,7 @@ const BlogsPerPage = 3;
 
 const ArchivePage = () => {
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[] | undefined>(
-    allBlogs?.slice().sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    allBlogs?.slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   );
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -125,7 +123,7 @@ const ArchivePage = () => {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-grow md:min-h-[65vh] min-h-[80vh]">
+      <div className="flex-grow md:min-h-[67vh] min-h-[80vh]">
         <Input
           type="text"
           className="py-6 bg-[rgb(41,41,47)] rounded-xl text-white font-semibold"
@@ -151,7 +149,7 @@ const ArchivePage = () => {
       </div>
 
       {totalPages > 1 && (
-        <div className="mt-8 mb-4 md:mb-8 self-center">
+        <div className="mt-8 mb-4 self-center">
           <Pagination>
             <PaginationContent>
               <PaginationItem>
