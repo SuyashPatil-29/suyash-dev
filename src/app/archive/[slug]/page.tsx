@@ -31,14 +31,6 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       url: absoluteUrl(post.slug),
-      images: [
-        {
-          url: "https://postimg.cc/gnrpcmN2",
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
   };
 }

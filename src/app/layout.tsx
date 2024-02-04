@@ -8,7 +8,11 @@ import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Home - Suyash Patil',
-  description: 'This blog will serve as a home for all my thoughts',
+  description: 'This blog will serve as home for all my thoughts',
+  keywords: 'blog, nextjs, suyash patil',
+  openGraph: {
+    images: ['https://postimg.cc/gnrpcmN2'] ,
+  },
 }
 
 export default function RootLayout({
@@ -21,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-[rgb(29,30,32)]`}>
         <Navbar />
         <MaxWidthWrapper>
-        {children}
+          {children}
         </MaxWidthWrapper>
         <Analytics />
       </body>
