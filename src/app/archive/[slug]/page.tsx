@@ -2,7 +2,7 @@ import "@/app/mdx.css";
 import { Icons } from "@/components/Icons";
 import { Mdx } from "@/components/MdxComponents";
 import { buttonVariants } from "@/components/ui/button";
-import { cn, formatDate } from "@/lib/utils";
+import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { allBlogs } from "contentlayer/generated";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -26,8 +26,19 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-     openGraph: {
-      images: [post.image],
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: absoluteUrl(post.slug),
+      images: [
+        {
+          url: post.image.toString(),
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }
