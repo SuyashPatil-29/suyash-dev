@@ -33,7 +33,7 @@ export async function generateMetadata({
       url: absoluteUrl(post.slug),
       images: [
         {
-          url: post.image,
+          url: "/pfp.jpg",
           width: 1200,
           height: 630,
           alt: post.title,
