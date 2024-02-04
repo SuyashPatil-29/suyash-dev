@@ -92,7 +92,7 @@ const components = {
     />
   ),
   Image: (props: React.ComponentProps<typeof Image>) => (
-    <Image {...props} alt={props.alt} />
+    <Image {...props} alt="Blog post image"/>
   ),
   img: ({
     className,
