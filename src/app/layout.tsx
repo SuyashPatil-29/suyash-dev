@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import MaxWidthWrapper from '../components/MaxWidthWrapper'
 const inter = Inter({ subsets: ['latin'] })
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Home - Suyash Patil',
@@ -22,6 +23,7 @@ export default function RootLayout({
         <MaxWidthWrapper>
         {children}
         </MaxWidthWrapper>
+        <Analytics />
       </body>
     </html>
   )
