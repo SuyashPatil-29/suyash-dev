@@ -1,5 +1,6 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
+
 export function EmptyAlert() {
   return (
     <Alert className="mt-4 bg-[rgb(41,41,47)] text-white">

@@ -14,6 +14,7 @@ const Navbar = (props: Props) => {
       <div className="md:flex hidden items-center justify-between gap-6">
         <NavItem href="/archive" linkto="/archive">Archive</NavItem>
         <NavItem href="/projects" linkto="/projects" >Projects</NavItem>
+        <NavItem href="/achievements" linkto="/achievements">Achievements</NavItem>
       </div>
       <MobileNavbar />
     </div>

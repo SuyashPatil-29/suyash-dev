@@ -30,8 +30,7 @@ const MobileNavbar = () => {
           <NavItem href="/" onClick={toggleSheet}>Home</NavItem>
           <NavItem href="/archive" onClick={toggleSheet}>Archive</NavItem>
           <NavItem href="/projects" onClick={toggleSheet}>Projects</NavItem>
-          <NavItem href="/categories" onClick={toggleSheet}>Categories</NavItem>
-          <NavItem href="/search" onClick={toggleSheet}>Search</NavItem>
+          <NavItem href="/achievements" onClick={toggleSheet}>Achievements</NavItem>
         </SheetContent>
       </Sheet>
     </div>
