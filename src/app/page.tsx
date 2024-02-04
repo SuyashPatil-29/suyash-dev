@@ -70,7 +70,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:gap-3 gap-2">
           {allBlogs
             .slice()
-            .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            .slice(0, 4)
             .map((blog: Blog) => (
               <BlogCard
                 title={blog.title}
@@ -84,3 +85,4 @@ export default function Home() {
     </TracingBeam>
   );
 }
+
