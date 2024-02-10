@@ -39,7 +39,7 @@ export default function Home() {
           👨‍💻 A self taught programmer, footballer and a lover of all things
           tech.
         </p>
-        <p>⚒️ I mainly work with Java, TypeScript and Rust on a daily basis.</p>
+        <p>⚒️ I mainly work with Java and TypeScript on a daily basis.</p>
         <p>🏡 Currently living in the beautiful city of Bengaluru in India.</p>
 
         <div className="flex mt-6 gap-4">
