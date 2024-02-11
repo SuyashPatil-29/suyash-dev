@@ -67,7 +67,7 @@ export default function Home() {
 
         <h1 className="mt-10 text-3xl text-white font-bold mb-6">Blogs</h1>
 
-        <div className="grid grid-cols-1 md:gap-3 gap-2">
+        <div className="grid grid-cols-1 md:gap-3 gap-2 pb-8">
           {allBlogs
             .slice()
             .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
